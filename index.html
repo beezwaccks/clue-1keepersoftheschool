@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Message from URL</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: #fafafa;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #222;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="message"></h1>
+
+  <script>
+    // Grab the path from the URL (everything after the domain)
+    const path = window.location.pathname;
+
+    // Remove the first slash
+    const message = path.substring(1) || "Default message";
+
+    // Show it on the page
+    document.getElementById("message").textContent = decodeURIComponent(message);
+  </script>
+</body>
+</html>
